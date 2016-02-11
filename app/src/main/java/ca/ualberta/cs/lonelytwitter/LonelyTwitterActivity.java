@@ -11,6 +11,7 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.InvalidPropertiesFormatException;
 
 import android.app.Activity;
 import android.content.Context;
@@ -69,7 +70,10 @@ public class LonelyTwitterActivity extends Activity {
 
 				//
 				//
-
+				Intent intent = new Intent(LonelyTwitterActivity.this, IntentReaderActivity.class);
+				intent.putExtra(IntentReaderActivity.TEXT_TO_TRANSFORM_KEY, "message 2");
+				intent.putExtra(IntentReaderActivity.MODE_OF_TRANSFORM_KEY, IntentReaderActivity.NORMAL);
+				startActivity(intent);
 				//
 				//
 			}
