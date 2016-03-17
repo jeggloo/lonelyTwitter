@@ -79,6 +79,7 @@ public abstract class Tweet {
         return date.toString() + " | " + message;
     }
 
+    //this is to put a picture for the thumbnail
     public void addThumbnail(Bitmap newThumbnail){
         if (newThumbnail != null) {
             thumbnail = newThumbnail;
@@ -91,9 +92,11 @@ public abstract class Tweet {
         }
     }
 
+    //returns the Bitmap
     public Bitmap getThumbnail(){
         if (thumbnail == null && thumbnailBase64 != null){
             byte[] decodeString = Base64.decode(thumbnailBase64, Base64.DEFAULT);
+            //starts from the first index to the very end
             thumbnail = BitmapFactory.decodeByteArray(decodeString, 0, decodeString.length);
         }
         return thumbnail;

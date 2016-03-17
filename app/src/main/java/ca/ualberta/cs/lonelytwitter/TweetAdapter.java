@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * NEW!
@@ -29,6 +30,7 @@ public class TweetAdapter extends ArrayAdapter<Tweet> {
 
         //TODO: initialize this:
 //        Bitmap thumbnail = null;
+        //the method we defined in tweet
         Bitmap thumbnail = tweet.getThumbnail();
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
